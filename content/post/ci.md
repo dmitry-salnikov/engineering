@@ -1,4 +1,9 @@
-# CI Pipeline and Custom Tools of Android projects at Juno
+---
+title: CI Pipeline and Custom Tools of Android projects at Juno
+date: 2017-06-15
+author: Artem Zinnatullin
+tags: ["ci", "android", "jenkins", "docker"]
+---
 
 Article describes almost all components of CI Pipeline we use for our Rider Android app at Juno. Driver team has similar, but slightly different configuration.
 
@@ -34,7 +39,7 @@ Disclaimer:
 
 ## Overview
 
-![Overall Picture](images/ci_pipeline_android.png)
+![Overall Picture](ci_pipeline_android.png)
 
 ### General Pipeline
 
@@ -47,7 +52,7 @@ General Pipeline builds:
 
 This gives us **automatic rebuilds** for Pull Request if branch it is targeting was changed — shortest CI feedback loop possible for a given PR.
 
-<img src="images/build_merge_result_and_commit.png" alt="Two Build Statuses" style="height: 200px;"/>
+<img src="build_merge_result_and_commit.png" alt="Two Build Statuses" style="height: 200px;"/>
 
 Building `pr/*/merge` refs is **essential if you want to have stable dev/master branch**. There are cases (happened 1-2 times a week even in our small team) when merge of a PR will break its target branch because there was logical conflict. 
 
